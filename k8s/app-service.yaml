@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-svc
+  namespace: aks-pg-demo
+  annotations:
+    # (optionnel) Pour utiliser une sonde HTTP côté Azure LB (sinon c'est TCP par défaut)
+    service.beta.kubernetes.io/azure-load-balancer-health-probe-request-path: /healthz
+spec:
+  type: LoadBalancer
+  selector:
+    app: app
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8000
+      protocol: TCP
+  externalTrafficPolicy: Cluster
