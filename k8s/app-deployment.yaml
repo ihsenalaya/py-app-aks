@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: ihsenalaya/aks-pg-demo:1
+          image: ihsenalaya/aks-pg-demo:2
           ports:
             - containerPort: 8000
           envFrom:

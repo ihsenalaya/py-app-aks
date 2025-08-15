@@ -4,7 +4,10 @@ metadata:
   name: app-config
   namespace: aks-pg-demo
 data:
-  DB_HOST: postgres
+  DB_HOST: azure-postgres
   DB_PORT: "5432"
-  DB_NAME: appdb
-  DB_USER: appuser
+  DB_NAME: ma_base
+  DB_USER: dbadmin
+  DB_PASSWORD: ihsenAlaya2025      # <-- ⚠️ mot de passe en clair (OK pour TEST uniquement)
+  # Optionnel si tu as désactivé TLS côté Azure
+  DB_SSLMODE: disable
