@@ -3,9 +3,6 @@ trigger: none  # lance manuellement pour le test
 
 pool:
   name: Default
-  demands:
-    - Agent.Name -equals 'Docker Agent - Linux'  # cible ton agent précis
-
 steps:
   - script: |
       echo "== Infos agent =="
