@@ -4,7 +4,6 @@ trigger: none  # lance manuellement pour le test
 pool:
   name: Default
   demands:
-    - Agent.OS -equals Linux
     - Agent.Name -equals 'Docker Agent - Linux'  # cible ton agent précis
 
 steps:
