@@ -1,0 +1,24 @@
+# azure-pipelines.yml
+trigger: none  # lance manuellement pour le test
+
+pool:
+  name: Default
+  demands:
+    - Agent.OS -equals Linux
+    - Agent.Name -equals 'Docker Agent - Linux'  # cible ton agent précis
+
+steps:
+  - script: |
+      echo "== Infos agent =="
+      echo "Agent name: $(Agent.Name)"
+      echo "Agent OS:   $(Agent.OS)"
+      echo "Agent machine: $(Agent.MachineName)"
+      echo
+      echo "== Vérifs système =="
+      whoami
+      uname -a
+      echo
+      echo "== Docker =="
+      docker --version || true
+      docker info >/dev/null 2>&1 && echo "Docker OK" || echo "Docker indisponible"
+    displayName: "Smoke test sur l’agent"
