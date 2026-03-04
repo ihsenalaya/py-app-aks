@@ -17,4 +17,6 @@ steps:
       echo "== Docker =="
       docker --version || true
       docker info >/dev/null 2>&1 && echo "Docker OK" || echo "Docker indisponible"
+       echo "== Terraform =="
+       terraform version
     displayName: "Smoke test sur l’agent"
