@@ -2,7 +2,7 @@
 trigger: none  # lance manuellement pour le test
 
 pool:
-  name: Default
+  name: rg-vmss-uniform-dev
 steps:
   - script: |
       echo "== Infos agent =="
